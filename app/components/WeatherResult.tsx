@@ -5,16 +5,17 @@ export default function WeatherResult({ data }: WeatherResultProps) {
   const city = data.nearest_area[0].areaName[0].value;
 
   return (
-    <div className="mt-6 p-6 rounded-xl shadow-md bg-white dark:bg-gray-800 text-center space-y-2">
-      <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+    <div className="mt-6 p-6 rounded-xl shadow-md bg-amber-300  text-center space-y-2">
+      <h2 className="text-2xl font-bold text-indigo-600 ">
         Aktualna pogoda dla {city}
       </h2>
-      <p className="text-4xl font-semibold">{condition.temp_C}°C</p>
-      <p className="text-lg text-gray-700 dark:text-gray-300">
-        {condition.weatherDesc[0].value}
+      <p className="text-4xl font-semibold text-gray-700">
+        {condition.temp_C}°C
       </p>
-      <p className="text-sm text-gray-600 dark:text-gray-400">
-        💨 Wiatr: {condition.windspeedKmph} km/h | 💧 Wilgotność: {condition.humidity}%
+
+      <p className="text-sm text-gray-700 ">
+        💨 Wiatr: {condition.windspeedKmph} km/h | 💧 Wilgotność:{" "}
+        {condition.humidity}%
       </p>
     </div>
   );
